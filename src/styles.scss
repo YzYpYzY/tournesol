@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  background-color: #333e7e;
+  color: rgb(238, 237, 237);
+  font-size: 11pt;
+  font-weight: normal;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+body {
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+app-root {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow: hidden;
+  position: relative;
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  &::-webkit-scrollbar-track {
+    margin: 0.25rem 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e5c1bc7c;
+    outline: none;
+  }
+}
+nav {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  max-height: calc(100% - 2rem);
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  &::-webkit-scrollbar-track {
+    margin: 0.25rem 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e5c1bc7c;
+    outline: none;
+  }
+}
+
+article {
+  max-height: 100%;
+  height: 100%;
+  overflow: auto;
+  flex-grow: 1;
+  background: #e5c1bc7c;
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  &::-webkit-scrollbar-track {
+    margin: 0.25rem 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e5c1bc7c;
+    outline: none;
+  }
+}
+.link {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  max-width: 15rem;
+  font-size: 1rem;
+  border: 1px solid #e9e1cc;
+  border-radius: 2px;
+  &:hover {
+    background: #ebe7dfd8;
+    color: #6e5773;
+  }
+}
+.parent-link {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  background: transparent;
+  .subLinks {
+    display: flex;
+    .label {
+      padding: 0.5rem 1rem;
+    }
+  }
+  i {
+    transform: rotateX(180deg) scale(0.75);
+  }
+  &.collapse {
+    .subLinks {
+      display: none;
+    }
+    i {
+      transform: rotateX(0) scale(0.75);
+    }
+  }
+}
+.label {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+  padding: 1rem;
+  margin: 0.25rem;
+  max-width: 15rem;
+  font-size: 1rem;
+  background-color: #e5c1bc7c;
+  border-radius: 2px;
+}
+
+h1 {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+}
+
+.gg-chevron-double-down {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transform: scale(var(--ggs, 0.5));
+  width: 22px;
+  height: 22px;
+  //color: rgb(38, 43, 114);
+  margin-left: 0.25rem;
+}
+.gg-chevron-double-down::after,
+.gg-chevron-double-down::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 7px;
+  top: 3px;
+}
+.gg-chevron-double-down::after {
+  top: 8px;
+}

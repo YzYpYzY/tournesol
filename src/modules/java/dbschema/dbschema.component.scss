@@ -1,0 +1,10 @@
+img {
+  height: 45rem;
+  flex-grow: 0;
+}
+:host {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}

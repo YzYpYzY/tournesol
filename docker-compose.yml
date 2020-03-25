@@ -2,6 +2,9 @@ version: "3.7"
 services:
   app:
     container_name: tournesol
+    labels:
+      - "traefik.frontend.rule=Host:cours.yzypyzy.com"
+      - "traefik.frontend.port=${TOURNESOL_PORT}"
     build: .
     environment:
       BS_APP_PORT: ${TOURNESOL_PORT}

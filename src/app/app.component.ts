@@ -14,13 +14,13 @@ export class AppComponent {
       link: null,
       subNavs: [
         {
-          label: "API",
+          label: "Serveur",
           isCollapse: true,
           link: null,
           subNavs: [
             { label: "Documentation", link: "api/docs" },
             { label: "Sources", link: "api/sources" },
-            { label: "Endpoint", link: "api" },
+            { label: "API", link: "api" },
             { label: "DB Schema", link: "api/db/schema" },
             { label: "DB", link: "api/db" }
           ]
@@ -32,7 +32,7 @@ export class AppComponent {
           subNavs: [
             { label: "Screens", link: "web/screens" },
             { label: "Sources", link: "web/sources" },
-            { label: "Endpoint", link: "web" }
+            { label: "App", link: "web" }
           ]
         },
         {
@@ -58,8 +58,14 @@ export class AppComponent {
           label: "Sources",
           link: "https://github.com/YzYpYzY/BlackStar"
         },
-        { label: "DB", link: "java/db" },
-        { label: "Endpoint", link: "java" }
+        {
+          label: "DB",
+          link: "https://blackstar-db.yzyyzy.com/"
+        },
+        {
+          label: "App",
+          link: "https://blackstar.yzyyzy.com/"
+        }
       ]
     },
     {

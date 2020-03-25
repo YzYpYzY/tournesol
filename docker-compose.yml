@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  app:
+    container_name: tournesol
+    build: .
+    environment:
+      BS_APP_PORT: ${TOURNESOL_PORT}
+    networks:
+      web:
+    ports:
+      - "${TOURNESOL_PORT}:80"
+    expose:
+      - ${TOURNESOL_PORT}
+networks:
+  web:

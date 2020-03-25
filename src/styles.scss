@@ -1,5 +1,7 @@
 html {
-  background-color: #333e7e;
+  --first-color: #3b4a74;
+  --second-color: #c4cccf7c;
+  background-color: var(--first-color);
   color: rgb(238, 237, 237);
   font-size: 11pt;
   font-weight: normal;
@@ -31,7 +33,7 @@ app-root {
     margin: 0.25rem 0;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #e5c1bc7c;
+    background-color: var(--second-color);
     outline: none;
   }
 }
@@ -52,7 +54,7 @@ nav {
     margin: 0.25rem 0;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #e5c1bc7c;
+    background-color: var(--second-color);
     outline: none;
   }
 }
@@ -62,7 +64,7 @@ article {
   height: 100%;
   overflow: auto;
   flex-grow: 1;
-  background: #e5c1bc7c;
+  background: var(--second-color);
   &::-webkit-scrollbar {
     width: 0.25rem;
   }
@@ -70,7 +72,7 @@ article {
     margin: 0.25rem 0;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #e5c1bc7c;
+    background-color: var(--second-color);
     outline: none;
   }
 }
@@ -126,7 +128,7 @@ article {
   margin: 0.25rem;
   max-width: 15rem;
   font-size: 1rem;
-  background-color: #e5c1bc7c;
+  background-color: var(--second-color);
   border-radius: 2px;
 }
 

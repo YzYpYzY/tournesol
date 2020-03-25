@@ -16,3 +16,4 @@ services:
       - ${TOURNESOL_PORT}
 networks:
   web:
+    external: true

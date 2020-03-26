@@ -60,11 +60,11 @@ export class AppComponent {
         },
         {
           label: "DB",
-          link: "https://blackstar-db.yzyyzy.com/"
+          link: "https://blackstar-db.yzypyzy.com/"
         },
         {
           label: "App",
-          link: "https://blackstar.yzyyzy.com/"
+          link: "https://blackstar.yzypyzy.com/"
         }
       ]
     },

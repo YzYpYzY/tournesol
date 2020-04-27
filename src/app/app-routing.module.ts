@@ -5,31 +5,37 @@ const routes: Routes = [
   {
     path: "java",
     loadChildren: () =>
-      import("../modules/java/java.module").then(m => m.JavaModule)
+      import("../modules/java/java.module").then((m) => m.JavaModule),
   },
   {
     path: "mobile",
     loadChildren: () =>
-      import("../modules/mobile/mobile.module").then(m => m.MobileModule)
+      import("../modules/mobile/mobile.module").then((m) => m.MobileModule),
   },
   {
     path: "web",
     loadChildren: () =>
-      import("../modules/web/web.module").then(m => m.WebModule)
+      import("../modules/web/web.module").then((m) => m.WebModule),
   },
   {
     path: "api",
     loadChildren: () =>
-      import("../modules/api/api.module").then(m => m.ApiModule)
+      import("../modules/api/api.module").then((m) => m.ApiModule),
   },
   {
     path: "bi",
-    loadChildren: () => import("../modules/bi/bi.module").then(m => m.BiModule)
-  }
+    loadChildren: () =>
+      import("../modules/bi/bi.module").then((m) => m.BiModule),
+  },
+  {
+    path: "idee",
+    loadChildren: () =>
+      import("../modules/idee/idee.module").then((m) => m.IdeeModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

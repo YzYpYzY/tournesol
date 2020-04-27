@@ -1,53 +1,30 @@
 <nav>
   <ng-container *ngFor="let nav of navs">
-    <div
-      *ngIf="nav.subNavs; else simpleLink"
-      class="parent-link"
-      [ngClass]="{ collapse: nav.isCollapse }"
-    >
-      <div class="label" (click)="toggle(nav)">
+    <div *ngIf="nav.subNavs; else simpleLink" class="parent-link" [ngClass]="{ collapse: nav.isCollapse }">
+      <div class="label" (click)="toggle(nav)" [ngClass]="{ 'disabled': nav.disabled }">
         {{ nav.label }}
         <i class="gg-chevron-double-down"></i>
       </div>
       <div class="subLinks" *ngFor="let subNav of nav.subNavs">
-        <div
-          *ngIf="subNav.subNavs; else simpleSubLink"
-          class="parent-link"
-          [ngClass]="{ collapse: subNav.isCollapse }"
-        >
-          <div class="label" (click)="toggle(subNav)">
+        <div *ngIf="subNav.subNavs; else simpleSubLink" class="parent-link" [ngClass]="{ collapse: subNav.isCollapse }">
+          <div class="label" (click)="toggle(subNav)" [ngClass]="{ 'disabled': subNav.disabled }">
             {{ subNav.label }}
             <i class="gg-chevron-double-down"></i>
           </div>
           <div class="subLinks" *ngFor="let subSubNav of subNav.subNavs">
-            <a
-              routerLink="subNav.link"
-              class="link"
-              routerLinkActive
-              (click)="activeLink(subNav)"
-              >{{ subSubNav.label }}</a
-            >
+            <a routerLink="subNav.link" class="link" [ngClass]="{ 'disabled': subSubNav.disabled }" routerLinkActive
+              (click)="activeLink(subNav)">{{ subSubNav.label }}</a>
           </div>
         </div>
         <ng-template #simpleSubLink>
-          <a
-            (click)="activeLink(subNav)"
-            routerLink="{{ subNav.link }}"
-            class="link"
-            routerLinkActive
-            >{{ subNav.label }}</a
-          >
+          <a (click)="activeLink(subNav)" routerLink="{{ subNav.link }}" class="link"
+            [ngClass]="{ 'disabled': subNav.disabled }" routerLinkActive>{{ subNav.label }}</a>
         </ng-template>
       </div>
     </div>
     <ng-template #simpleLink>
-      <a
-        (click)="activeLink(nav)"
-        routerLink="{{ nav.link }}"
-        class="link"
-        routerLinkActive
-        >{{ nav.label }}</a
-      >
+      <a (click)="activeLink(nav)" routerLink="{{ nav.link }}" class="link" [ngClass]="{ 'disabled': nav.disabled }"
+        routerLinkActive>{{ nav.label }}</a>
     </ng-template>
   </ng-container>
 </nav>
